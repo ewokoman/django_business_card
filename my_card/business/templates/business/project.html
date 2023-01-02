@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+        {% load static %}
+        <title>Business card</title>
+    
+        <link rel="shortcut icon" href="{% static 'business/images/gt_favicon.png' %}">
+        
+        <!-- Bootstrap -->
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+        <!-- Icons -->
+        <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
+        <!-- Fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="{% static 'business/styles.css' %}">
+    
+        <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+    </head>
+    <body class="home">
+    
+    <header id="header">
+    
+        <nav class="navbar navbar-default navbar-sticky">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                </div>
+                
+                <div class="navbar-collapse collapse">
+                    
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'business:index' %}">Home</a></li>
+                        <li><a href="{% url 'business:projects' %}">Projects</a></li>
+                        <li><a href="{% url 'business:reviews' %}">Reviews</a></li>
+                    </ul>
+                
+                </div>		
+            </div>	
+        </nav>
+    
+        <div id="head" class="parallax" parallax-speed="1">
+            <h1 id="logo" class="text-center">
+                <span class="title">{{ owner_site.first_name }} {{ owner_site.last_name }}</span>
+                <span class="tagline">{{ owner_site.position }}<br>
+            </h1>
+        </div>
+
+<main id="main">
+
+	<div class="container">
+		
+		<div class="row topspace">
+			<div class="col-sm-8 col-sm-offset-2">
+															
+ 				<article class="post">
+					<header class="entry-header">
+ 						<h1 class="entry-title">{{ project.name }}</h1>
+					</header> 
+					<div class="entry-content"> 
+						<p><img alt="" src="{{ project.image.url }}"></p>
+                        <p>{{ project.company }}</p>
+						<p>
+						    {{ project.comment_text }}
+						</p>
+
+					</div> 
+				</article><!-- #post-## -->
+
+			</div> 
+		</div> <!-- /row post  -->
+
+
+</main>
+
+</body>
+</html>
