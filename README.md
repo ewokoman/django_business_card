@@ -1,6 +1,6 @@
 "# django_business_card" 
 
-
+Создать окружение conda
 Запустить pip install requirements.txt, 
 Перейти в my_card, 
 запустить сервер django, 
